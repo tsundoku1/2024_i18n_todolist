@@ -1,0 +1,21 @@
+@import "colors";
+.theme--dark.v-btn.v-btn--has-bg.btn_yellow,
+.v-btn.btn_yellow {
+  color: #000;
+  font-weight: bolder;
+  background-color: $yellow;
+}
+.theme--dark.v-btn.v-btn--has-bg.btn_red,
+.v-btn.btn_red {
+  color: #fff;
+  background-color: #610305;
+}
+.theme--dark.v-btn.v-btn--has-bg.btn_black,
+.v-btn.btn_black {
+  color: #fff;
+  background-color: #000;
+}
+
+.nuxt-link-exact-active {
+  color: red;
+}
