@@ -15,7 +15,7 @@
           text-color="white"
           small
         >
-          已完成
+          {{ $t("done") }}
         </v-chip>
         <v-chip
           v-if="!item.done"
@@ -24,7 +24,7 @@
           text-color="white"
           small
         >
-          待完成
+          {{ $t("undone") }}
         </v-chip>
         {{ item.todo }}
       </template>
@@ -59,8 +59,12 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn class="btn_black" @click="showDialog = false"> 取消 </v-btn>
-          <v-btn class="btn_yellow" @click="delete_item"> 確認 </v-btn>
+          <v-btn class="btn_black" @click="showDialog = false">
+            {{ $t("cancel") }}
+          </v-btn>
+          <v-btn class="btn_yellow" @click="delete_item">
+            {{ $t("ok") }}
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>

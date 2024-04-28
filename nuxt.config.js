@@ -1,4 +1,6 @@
 import colors from "vuetify/es5/util/colors";
+import TW from "./components/i18n/tw.js";
+import EN from "./components/i18n/en.js";
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -33,7 +35,24 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    [
+      "@nuxtjs/i18n",
+      {
+        legacy: false,
+        locales: ["en", "tw"],
+        defaultLocale: "tw",
+        vueI18n: {
+          fallbackLocale: "tw",
+          messages: {
+            en: EN,
+            tw: TW,
+          },
+        },
+        globalInjection: true,
+      },
+    ],
+  ],
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
@@ -56,4 +75,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+  i18n: {
+    // ... your other options
+    skipSettingLocaleOnNavigate: true,
+  },
 };

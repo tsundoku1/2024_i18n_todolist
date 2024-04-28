@@ -10,12 +10,14 @@
           :items="todoType"
           item-text="abbr"
           item-value="state"
-          label="狀態"
+          :label="$t('status')"
           chips
         ></v-select>
       </div>
       <!-- 新增項目 -->
-      <v-btn class="add_item btn_yellow" @click="dialog_add = true">新增</v-btn>
+      <v-btn class="add_item btn_yellow" @click="dialog_add = true">{{
+        $t("add")
+      }}</v-btn>
     </div>
 
     <!-- 2. To Do List - table component) -->
@@ -47,17 +49,17 @@ export default {
     return {
       // table data
       TDheaders: [
-        { text: "事項", value: "todo" },
-        { text: "狀態", value: "done", align: "left" },
-        { text: "刪除", value: "delete", sortable: false },
+        { text: this.$t("item"), value: "todo" },
+        { text: this.$t("status"), value: "done", align: "left" },
+        { text: this.$t("delete"), value: "delete", sortable: false },
       ],
       tableRows: [],
       tableColumns: ["todo", "edit", "delete"],
       //狀態類型
       todoType: [
-        { state: "all", abbr: "全部" },
-        { state: "todo", abbr: "待完成" },
-        { state: "done", abbr: "已完成" },
+        { state: "all", abbr: this.$t("all") },
+        { state: "todo", abbr: this.$t("undone") },
+        { state: "done", abbr: this.$t("done") },
       ],
       //狀態篩選預設值
       stateSelected: "all",

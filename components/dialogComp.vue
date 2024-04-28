@@ -24,8 +24,12 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn class="btn_black" @click="close_dialog()"> 取消 </v-btn>
-            <v-btn class="btn_yellow" @click="add_item()"> 確認 </v-btn>
+            <v-btn class="btn_black" @click="close_dialog()">
+              {{ $t("cancel") }}
+            </v-btn>
+            <v-btn class="btn_yellow" @click="add_item()">
+              {{ $t("ok") }}
+            </v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
